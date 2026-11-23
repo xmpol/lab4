@@ -1,0 +1,101 @@
+{
+  "dataset": {
+    "rows": 1000,
+    "features": 20
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_seed": 42,
+    "stratified": true
+  },
+  "cross_validation": {
+    "folds": 5,
+    "random_seed": 42
+  },
+  "model_experiments": {
+    "Extra Trees": {
+      "cv_roc_auc_mean": 0.7547991071428571,
+      "cv_roc_auc_std": 0.02306319593183341,
+      "test_metrics": {
+        "roc_auc": 0.8023809523809524,
+        "accuracy": 0.75,
+        "precision": 0.8125,
+        "recall": 0.8357142857142857,
+        "f1": 0.823943661971831
+      }
+    },
+    "Random Forest": {
+      "cv_roc_auc_mean": 0.77890625,
+      "cv_roc_auc_std": 0.03578814906530385,
+      "test_metrics": {
+        "roc_auc": 0.8302380952380953,
+        "accuracy": 0.775,
+        "precision": 0.8275862068965517,
+        "recall": 0.8571428571428571,
+        "f1": 0.8421052631578947
+      }
+    },
+    "HistGradientBoosting": {
+      "cv_roc_auc_mean": 0.7612351190476191,
+      "cv_roc_auc_std": 0.022429858171466855,
+      "test_metrics": {
+        "roc_auc": 0.8139285714285713,
+        "accuracy": 0.8,
+        "precision": 0.8289473684210527,
+        "recall": 0.9,
+        "f1": 0.863013698630137
+      }
+    },
+    "Gradient Boosting": {
+      "cv_roc_auc_mean": 0.7610491071428572,
+      "cv_roc_auc_std": 0.037580178054228405,
+      "test_metrics": {
+        "roc_auc": 0.8313095238095238,
+        "accuracy": 0.765,
+        "precision": 0.7852760736196319,
+        "recall": 0.9142857142857143,
+        "f1": 0.8448844884488449
+      }
+    },
+    "MLP": {
+      "cv_roc_auc_mean": 0.7078125,
+      "cv_roc_auc_std": 0.042420079114350334,
+      "test_metrics": {
+        "roc_auc": 0.766547619047619,
+        "accuracy": 0.755,
+        "precision": 0.782608695652174,
+        "recall": 0.9,
+        "f1": 0.8372093023255814
+      }
+    }
+  },
+  "random_forest_min_samples_leaf_search": {
+    "1": {
+      "cv_roc_auc_mean": 0.7775855654761904,
+      "cv_roc_auc_std": 0.0312921895797284
+    },
+    "2": {
+      "cv_roc_auc_mean": 0.778125,
+      "cv_roc_auc_std": 0.03547074858639431
+    },
+    "3": {
+      "cv_roc_auc_mean": 0.7777901785714285,
+      "cv_roc_auc_std": 0.03603864365443362
+    },
+    "5": {
+      "cv_roc_auc_mean": 0.7777529761904762,
+      "cv_roc_auc_std": 0.0374686158117364
+    }
+  },
+  "selected_model": {
+    "name": "Random Forest (500 trees, min_samples_leaf=3)",
+    "test_metrics": {
+      "roc_auc": 0.8302380952380953,
+      "accuracy": 0.775,
+      "precision": 0.8275862068965517,
+      "recall": 0.8571428571428571,
+      "f1": 0.8421052631578947
+    },
+    "threshold": 0.5
+  }
+}
