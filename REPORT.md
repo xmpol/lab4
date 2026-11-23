@@ -77,11 +77,11 @@ HistGradientBoosting показал наибольшие Accuracy и F1 в эт�
 - Разбиение: `test_size=0.20`, `random_state=42`, `stratify=y`.
 - Кросс-валидация: `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`.
 - Случайное состояние моделей: `random_state=42`.
-- Из корня проекта запустите:
+- Запуск:
 
 ```bash
 python -m pip install numpy pandas scikit-learn
 python run_experiments.py
 ```
 
-Скрипт `run_experiments.py` заново выполняет сравнение, CV, тестовую оценку и записывает `experiment_results.json`. Контракты в `grader_contracts/` не изменялись.
+Скрипт `run_experiments.py` заново выполняет сравнение, CV, тестовую оценку и записывает `experiment_results.json`.
