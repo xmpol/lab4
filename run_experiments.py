@@ -1,4 +1,3 @@
-"""Воспроизводимые эксперименты лабораторной №4."""
 from __future__ import annotations
 
 import json
@@ -18,13 +17,11 @@ from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val
 from sklearn.neural_network import MLPClassifier
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-
 from grader_contracts.ensembles import EnsembleInput
 from ensemble_models import run_ensemble_experiment
 
 SEED = 42
 ROOT = Path(__file__).resolve().parent
-
 
 def metric_row(y_true, probabilities):
     pred = (probabilities >= 0.5).astype(int)
@@ -35,7 +32,6 @@ def metric_row(y_true, probabilities):
         "recall": float(recall_score(y_true, pred, zero_division=0)),
         "f1": float(f1_score(y_true, pred, zero_division=0)),
     }
-
 
 def main():
     frame = pd.read_csv(ROOT / "german.csv", sep=";")
@@ -99,7 +95,6 @@ def main():
             "test_metrics": metric_row(y_test, proba),
         }
 
-    # Небольшой поиск параметров Random Forest проводится только на train.
     rf_search = {}
     for leaf in (1, 2, 3, 5):
         model = make_pipeline(
